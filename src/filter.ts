@@ -1,8 +1,6 @@
-import { BooleanIterator } from ".";
-
 export default async function filter<T>(
   array: T[],
-  iterator: BooleanIterator<T>
+  iterator: (value: T, index: number) => Promise<boolean>
 ): Promise<T[]> {
   if (!Array.isArray(array) || !array?.length) return [];
   const results: T[] = [];

@@ -1,7 +1,7 @@
-import some from "./some";
+import { some } from "index";
 import { describe, it, expect } from "vitest";
 
-describe("asyncSome tests", () => {
+describe("some tests", () => {
   describe("truthy", () => {
     it("array of numbers", async () => {
       const numbers: number[] = [1, 2, 3, 4, 5];

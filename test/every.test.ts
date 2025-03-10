@@ -1,4 +1,4 @@
-import every from "./every";
+import { every } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("every tests", () => {

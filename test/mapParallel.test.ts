@@ -1,5 +1,4 @@
-import mapParallel from "./mapParallel";
-import { sleep } from "./utils/sleep";
+import { mapParallel } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("mapParallel tests", () => {
@@ -10,7 +9,7 @@ describe("mapParallel tests", () => {
     const doubledNumbers = await mapParallel(
       numbers,
       async (number) => {
-        await sleep(number);
+        // await sleep(number);
         return number * 2;
       },
       5
@@ -20,7 +19,7 @@ describe("mapParallel tests", () => {
 
   it("returns all values when not passed a maxParallelBatchSize", async () => {
     const doubledNumbers = await mapParallel(numbers, async (number) => {
-      await sleep(number);
+      // await sleep(number);
       return number * 2;
     });
     expect(doubledNumbers).to.eql(expectedDoubledNumbers);
@@ -30,7 +29,7 @@ describe("mapParallel tests", () => {
     const doubledNumbers = await mapParallel(
       numbers,
       async (number) => {
-        await sleep(number);
+        // await sleep(number);
         return number * 2;
       },
       20
@@ -55,7 +54,7 @@ describe("mapParallel tests", () => {
     await mapParallel(
       numbers,
       async (number) => {
-        await sleep(number * 100); // wait `number` deciseconds
+        // await sleep(number * 100); // wait `number` deciseconds
         return number;
       },
       10

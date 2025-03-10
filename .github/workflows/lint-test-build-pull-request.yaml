@@ -1,0 +1,67 @@
+name: Lint, Test, and Build Pull Request
+on:
+  pull_request:
+    branches: main
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: ES Lint
+    strategy:
+      matrix:
+        node-version: ["18.*"]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use node version ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: install modules
+        run: yarn install
+
+      - name: run eslint
+        run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    strategy:
+      matrix:
+        node-version: ["18.*"]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use node version ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install modules
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test
+
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    strategy:
+      matrix:
+        node-version: ["18.*"]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use node version ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install modules
+        run: yarn install
+
+      - name: Build package
+        run: yarn build

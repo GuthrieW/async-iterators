@@ -1,8 +1,6 @@
-import { BooleanIterator } from ".";
-
 export default async function every<T>(
   array: T[],
-  iterator: BooleanIterator<T>
+  iterator: (value: T, index: number) => Promise<boolean>
 ): Promise<boolean> {
   if (!Array.isArray(array) || !array?.length) return false;
 

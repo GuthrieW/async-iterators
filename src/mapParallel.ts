@@ -1,5 +1,3 @@
-import { ArrayIterator } from ".";
-
 /**
  * take and complete tasks from a queue until that queue is empty.
  * @param {{ task: T; index: number }[]} array
@@ -32,7 +30,7 @@ async function takeAndCompleteFromQueueUntilDone<T, V>(
  */
 export default async function mapParallel<T, V>(
   array: T[],
-  iterator: ArrayIterator<T, V>,
+  iterator: (value: T, index: number) => Promise<V>,
   maxParallelBatchSize?: number
 ): Promise<V[]> {
   if (!Array.isArray(array) || !array?.length) return [];

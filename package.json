@@ -7,10 +7,13 @@
   "homepage": "https://github.com/GuthrieW/async-iterators",
   "repository": "GuthrieW/async-iterators",
   "files": [
-    "index.js"
+    "/dist"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "yarn clean && yarn tsc && rm -rf ./dist/test",
+    "clean": "rm -rf ./dist",
     "test": "vitest"
   },
   "keywords": [
@@ -19,9 +22,11 @@
     "iteraor"
   ],
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=18.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "^5.8.2"
+  },
   "devDependencies": {
     "vitest": "^3.0.8"
   }

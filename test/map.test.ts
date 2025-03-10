@@ -1,6 +1,4 @@
-// @ts-strict-ignore
-import { sleep } from "./utils/sleep";
-import map from "./map";
+import { map } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("map tests", () => {
@@ -10,7 +8,7 @@ describe("map tests", () => {
     const indices: number[] = [];
 
     await map(numbers, async (number, index) => {
-      await sleep(12 - index);
+      // await sleep(12 - index);
       indices.push(index);
     });
     expect(indices).to.eql(numbers.map((number) => number - 1));

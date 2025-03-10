@@ -4,4 +4,5 @@ export { default as find } from "./src/find";
 export { default as map } from "./src/map";
 export { default as mapParallel } from "./src/mapParallel";
 export { default as reduce } from "./src/reduce";
+export { default as reduceRight } from "./src/reduceRight";
 export { default as some } from "./src/some";

@@ -1,7 +1,7 @@
-import reduce from "./reduce";
+import { reduce } from "index";
 import { describe, it, expect } from "vitest";
 
-describe("asyncReduce tests", () => {
+describe("reduce tests", () => {
   it("array of numbers", async () => {
     const numbers: number[] = [1, 2, 3, 4, 5];
     const arrResult: number = numbers.reduce(

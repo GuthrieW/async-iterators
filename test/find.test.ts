@@ -1,4 +1,4 @@
-import find from "./find";
+import { find } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("find tests", () => {

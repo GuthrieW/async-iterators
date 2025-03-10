@@ -1,4 +1,4 @@
-import filter from "./filter";
+import { filter } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("filter tests", () => {
