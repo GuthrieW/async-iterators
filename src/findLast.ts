@@ -1,3 +1,16 @@
-export default async function findLast<T>(): Promise<T> {
-  throw new Error("Not implemented");
+export default async function findLast<T>(
+  array: T[],
+  iterator: (value: T, index: number) => Promise<boolean>
+): Promise<T | undefined> {
+  if (!Array.isArray(array) || !array?.length) return undefined;
+
+  for (let index = array.length; index >= 0; index--) {
+    const element = array.at(index) as T;
+    const result = await iterator(element, index);
+    if (result) {
+      return element;
+    }
+  }
+
+  return undefined;
 }

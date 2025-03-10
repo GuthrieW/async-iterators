@@ -4,12 +4,13 @@ export default async function every<T>(
 ): Promise<boolean> {
   if (!Array.isArray(array) || !array?.length) return false;
 
-  for (let i = 0; i < array.length; i++) {
-    const element = array.at(i) as T;
-    const result = await iterator(element, i);
+  for (let index = 0; index < array.length; index++) {
+    const element = array.at(index) as T;
+    const result = await iterator(element, index);
     if (!result) {
       return false;
     }
   }
+
   return true;
 }

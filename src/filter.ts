@@ -3,10 +3,14 @@ export default async function filter<T>(
   iterator: (value: T, index: number) => Promise<boolean>
 ): Promise<T[]> {
   if (!Array.isArray(array) || !array?.length) return [];
+
   const results: T[] = [];
-  for (let i = 0; i < array.length; i++) {
-    const result = await iterator(array[i], i);
-    if (result) results.push(array[i]);
+  for (let index = 0; index < array.length; index++) {
+    const element = array.at(index) as T;
+    const result = await iterator(element, index);
+    if (result) {
+      results.push(element);
+    }
   }
   return results;
 }

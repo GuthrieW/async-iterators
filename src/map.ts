@@ -1,14 +1,14 @@
 export default async function map<T, V>(
   array: T[],
   iterator: (value: T, index: number) => Promise<V>
-): Promise<V[] | undefined> {
-  if (!Array.isArray(array) || !array?.length) return;
+): Promise<V[]> {
+  if (!Array.isArray(array) || !array?.length) return [];
 
   const results: V[] = [];
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
 
-    results.push(await iterator(element, i));
+    results.push(await iterator(element, index));
   }
   return results;
 }

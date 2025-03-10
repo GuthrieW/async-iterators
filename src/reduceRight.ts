@@ -6,8 +6,8 @@ export default async function reduceRight<T, V>(
   if (!Array.isArray(array) || !array?.length) return initialValue;
 
   let result = initialValue;
-  for (let i = array.length; i >= 0; i--) {
-    result = await iterator(result, array.at(i) as T);
+  for (let index = array.length - 1; index >= 0; index--) {
+    result = await iterator(result, array[index]);
   }
 
   return result;

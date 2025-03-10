@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      // "*": ["*"]
-    },
     "outDir": "dist",
     "target": "ES2022",
     "module": "NodeNext",

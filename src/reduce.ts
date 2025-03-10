@@ -6,8 +6,9 @@ export default async function reduce<T, V>(
   if (!Array.isArray(array) || !array?.length) return initialValue;
 
   let result = initialValue;
-  for (let i = 0; i < array.length; i++) {
-    result = await iterator(result, array.at(i) as T);
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    result = await iterator(result, element);
   }
 
   return result;
