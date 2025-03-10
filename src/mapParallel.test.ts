@@ -1,5 +1,5 @@
 import mapParallel from "./mapParallel";
-import { sleep } from "./sleep";
+import { sleep } from "./utils/sleep";
 import { describe, it, expect } from "vitest";
 
 describe("mapParallel tests", () => {

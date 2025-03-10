@@ -1,5 +1,5 @@
 // @ts-strict-ignore
-import { sleep } from "./sleep";
+import { sleep } from "./utils/sleep";
 import map from "./map";
 import { describe, it, expect } from "vitest";
 
