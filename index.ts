@@ -1,6 +1,11 @@
 export { default as every } from "./src/every";
 export { default as filter } from "./src/filter";
 export { default as find } from "./src/find";
+export { default as findIndex } from "./src/findIndex";
+export { default as findLast } from "./src/findLast";
+export { default as findLastIndex } from "./src/findLastIndex";
+export { default as indexOf } from "./src/indexOf";
+export { default as lastIndexOf } from "./src/lastIndexOf";
 export { default as map } from "./src/map";
 export { default as mapParallel } from "./src/mapParallel";
 export { default as reduce } from "./src/reduce";
