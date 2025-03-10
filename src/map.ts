@@ -7,7 +7,6 @@ export default async function map<T, V>(
   const results: V[] = [];
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
-
     results.push(await iterator(element, index));
   }
   return results;

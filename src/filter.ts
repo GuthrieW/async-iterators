@@ -6,7 +6,7 @@ export default async function filter<T>(
 
   const results: T[] = [];
   for (let index = 0; index < array.length; index++) {
-    const element = array.at(index) as T;
+    const element = array[index];
     const result = await iterator(element, index);
     if (result) {
       results.push(element);

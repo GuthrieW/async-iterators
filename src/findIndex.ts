@@ -5,7 +5,7 @@ export default async function findIndex<T>(
   if (!Array.isArray(array) || !array?.length) return -1;
 
   for (let index = 0; index < array.length; index++) {
-    const element = array.at(index) as T;
+    const element = array[index];
     const result = await iterator(element, index);
     if (result) {
       return index;
