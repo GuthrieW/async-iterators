@@ -1,2 +1,3 @@
 # async-iterators
-A JavaScript utility library for asynchrous array iteration.
+
+A TypeScript utility library for asynchronous array iteration.

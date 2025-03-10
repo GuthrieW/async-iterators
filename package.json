@@ -1,0 +1,28 @@
+{
+  "name": "async-iterators",
+  "author": "Wesley Guthrie",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "A TypeScript utility library for asynchronous array iteration.",
+  "homepage": "https://github.com/GuthrieW/async-iterators",
+  "repository": "GuthrieW/async-iterators",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "array",
+    "async",
+    "iteraor"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "^3.0.8"
+  }
+}
