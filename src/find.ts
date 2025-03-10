@@ -1,6 +1,8 @@
+import { BooleanIterator } from ".";
+
 export default async function find<T>(
   array: T[],
-  iterator: (val: T, index?: number) => Promise<boolean>
+  iterator: BooleanIterator<T>
 ): Promise<T | undefined> {
   if (!Array.isArray(array) || !array?.length) return undefined;
   for (let i = 0; i < array.length; i++) {

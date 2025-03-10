@@ -1,6 +1,8 @@
+import { ArrayIterator } from ".";
+
 export default async function map<T, V>(
   array: T[],
-  iterator: (val: T, i: number) => Promise<V>
+  iterator: ArrayIterator<T, V>
 ): Promise<V[] | undefined> {
   if (!Array.isArray(array) || !array?.length) return;
 
