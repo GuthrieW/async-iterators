@@ -5,7 +5,6 @@ export { default as findIndex } from "./src/findIndex";
 export { default as findLast } from "./src/findLast";
 export { default as findLastIndex } from "./src/findLastIndex";
 export { default as map } from "./src/map";
-export { default as mapParallel } from "./src/mapParallel";
 export { default as reduce } from "./src/reduce";
 export { default as reduceRight } from "./src/reduceRight";
 export { default as some } from "./src/some";

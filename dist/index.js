@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.some = exports.reduceRight = exports.reduce = exports.mapParallel = exports.map = exports.findLastIndex = exports.findLast = exports.findIndex = exports.find = exports.filter = exports.every = void 0;
+exports.some = exports.reduceRight = exports.reduce = exports.map = exports.findLastIndex = exports.findLast = exports.findIndex = exports.find = exports.filter = exports.every = void 0;
 var every_1 = require("./src/every");
 Object.defineProperty(exports, "every", { enumerable: true, get: function () { return __importDefault(every_1).default; } });
 var filter_1 = require("./src/filter");
@@ -18,8 +18,6 @@ var findLastIndex_1 = require("./src/findLastIndex");
 Object.defineProperty(exports, "findLastIndex", { enumerable: true, get: function () { return __importDefault(findLastIndex_1).default; } });
 var map_1 = require("./src/map");
 Object.defineProperty(exports, "map", { enumerable: true, get: function () { return __importDefault(map_1).default; } });
-var mapParallel_1 = require("./src/mapParallel");
-Object.defineProperty(exports, "mapParallel", { enumerable: true, get: function () { return __importDefault(mapParallel_1).default; } });
 var reduce_1 = require("./src/reduce");
 Object.defineProperty(exports, "reduce", { enumerable: true, get: function () { return __importDefault(reduce_1).default; } });
 var reduceRight_1 = require("./src/reduceRight");
