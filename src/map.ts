@@ -20,13 +20,13 @@ export default async function map<T, V>(
   if (!Array.isArray(array) || !array?.length) return [];
 
   if (options?.batchIterations) {
-    return await batchParallel(array, iteratee, options.batchSize);
+    return await mapParallel(array, iteratee, options.batchSize);
   } else {
-    return await batchSerial(array, iteratee);
+    return await mapSerial(array, iteratee);
   }
 }
 
-async function batchParallel<T, V>(
+async function mapParallel<T, V>(
   array: T[],
   iteratee: (value: T, index: number) => Promise<V>,
   batchSize: number
@@ -86,7 +86,7 @@ async function takeAndCompleteFromQueueUntilDone<T, V>(
   });
 }
 
-async function batchSerial<T, V>(
+async function mapSerial<T, V>(
   array: T[],
   iteratee: (value: T, index: number) => Promise<V>
 ): Promise<V[]> {
