@@ -6,6 +6,7 @@
  * @param {T[]} array
  * @param {(val: T, index?: number) => Promise<V>} iteratee
  * @param {number} [maxParallelBatchSize=10]
+ * @returns {Promise<V[]>}
  * @example
  * const array = [1, 2, 3];
  * const doubledArray = await mapParellel(array, async (value) => value * 2);
