@@ -22,7 +22,9 @@
   "keywords": [
     "array",
     "async",
-    "iteraor"
+    "promise",
+    "iteraor",
+    "iteration"
   ],
   "engines": {
     "node": ">=18.0.0"
