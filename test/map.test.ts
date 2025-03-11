@@ -2,10 +2,6 @@ import { map } from "index";
 import { describe, it, expect } from "vitest";
 import { sleep } from "./utils";
 
-describe("map tests", () => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-});
-
 describe("mapParallel tests", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const expectedDoubledNumbers = numbers.map((number) => number * 2);
