@@ -1,0 +1,40 @@
+{
+  "name": "async-iterators",
+  "author": "Wesley Guthrie",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "A TypeScript utility library for asynchronous array iteration.",
+  "homepage": "https://github.com/GuthrieW/async-iterators",
+  "repository": "GuthrieW/async-iterators",
+  "type": "commonjs",
+  "files": [
+    "/dist",
+    "/src"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "yarn clean && yarn tsc && rm -rf ./dist/test",
+    "clean": "rm -rf ./dist",
+    "lint": "eslint",
+    "test": "vitest"
+  },
+  "keywords": [
+    "array",
+    "async",
+    "promise",
+    "iteraor",
+    "iteration"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.0.8"
+  }
+}
