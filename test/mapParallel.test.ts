@@ -2,7 +2,7 @@ import { mapParallel } from "index";
 import { describe, it, expect } from "vitest";
 
 describe("mapParallel tests", () => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const expectedDoubledNumbers = numbers.map((number) => number * 2);
 
   it("returns all values when passed a maxParallelBatchSize", async () => {

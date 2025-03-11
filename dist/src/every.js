@@ -5,7 +5,7 @@ async function every(array, iterator) {
     if (!Array.isArray(array) || !array?.length)
         return false;
     for (let index = 0; index < array.length; index++) {
-        const element = array.at(index);
+        const element = array[index];
         const result = await iterator(element, index);
         if (!result) {
             return false;

@@ -5,7 +5,7 @@ async function findLast(array, iterator) {
     if (!Array.isArray(array) || !array?.length)
         return undefined;
     for (let index = array.length; index >= 0; index--) {
-        const element = array.at(index);
+        const element = array[index];
         const result = await iterator(element, index);
         if (result) {
             return element;

@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "esModuleInterop": true,

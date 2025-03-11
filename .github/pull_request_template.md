@@ -17,3 +17,4 @@
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] I have added or refactored the necessary tests that prove my fix is effective or that my feature works
+- [ ] I have run the `yarn build` script in order to update the `/dist` folder
