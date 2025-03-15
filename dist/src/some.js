@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * @name SomeIterateeFunction
+ * @function
+ * @param {T} value
+ * @param {number} index
+ * @returns {Promise<boolean>}
+ * @private
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = some;
 /**
@@ -7,7 +15,7 @@ exports.default = some;
  * @static
  * @since 1.0.0
  * @param {T[]} array
- * @param {(value: T, index: number) => Promise<boolean>} iteratee
+ * @param {SomeIterateeFunction} iteratee (value: T, index: number) => Promise<boolean>
  * @returns {Promise<boolean>}
  * @example
  * const array = [1, 2, 3];

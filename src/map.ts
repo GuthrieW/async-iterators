@@ -1,3 +1,17 @@
+type BatchOptionalParams = {
+  batchIterations: boolean;
+  batchSize: number;
+};
+
+/**
+ * @name MapIterateeFunction
+ * @function
+ * @param {T} value
+ * @param {number} index
+ * @returns {Promise<V>}
+ * @private
+ */
+
 /**
  * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map|MDN Documentation Array.prototype.map}
  * Optionally, you can batch your iterations to more efficiently await blocking iteratee function calls using the batchIterations and batchSize attributes on the options parameter.
@@ -5,8 +19,8 @@
  * @static
  * @since 1.0.0
  * @param {T[]} array
- * @param {(value: T, index: number) => Promise<V>} iteratee
- * @param {{ batchIterations: boolean; batchSize: number }} [options]
+ * @param {MapIterateeFunction} iteratee (value: T, index: number) => Promise<V>
+ * @param {BatchOptionalParams} [options]
  * @returns {Promise<V[]>}
  * @example
  * const array = [1, 2, 3];
@@ -15,7 +29,7 @@
 export default async function map<T, V>(
   array: T[],
   iteratee: (value: T, index: number) => Promise<V>,
-  options?: { batchIterations: boolean; batchSize: number }
+  options?: BatchOptionalParams
 ): Promise<V[]> {
   if (!Array.isArray(array) || !array?.length) return [];
 
@@ -60,15 +74,29 @@ async function mapParallel<T, V>(
   return results;
 }
 
+type BatchTask<T> = {
+  task: T;
+  index: number;
+};
+
+type BatchResult<V> = {
+  result: V;
+  index: number;
+};
+
+type BatchIterateeFunction<T, V> = (value: T, index: number) => Promise<V>;
+
 /**
  * take and complete tasks from a queue until that queue is empty.
- * @param {{ task: T; index: number }[]} array
- * @param {(value: T, index: number) => Promise<V>} iteratee
+ * @param {BatchTask[]} array
+ * @param {BatchIterateeFunction}
+ * @param {BatchIterateeFunction} iteratee
+ * @private
  */
 async function takeAndCompleteFromQueueUntilDone<T, V>(
-  array: { task: T; index: number }[],
-  iteratee: (value: T, index: number) => Promise<V>
-): Promise<{ result: V; index: number }[]> {
+  array: BatchTask<T>[],
+  iteratee: BatchIterateeFunction<T, V>
+): Promise<BatchResult<V>[]> {
   const item = array.shift();
   if (!item) {
     return [];
