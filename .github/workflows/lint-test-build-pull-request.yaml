@@ -65,3 +65,26 @@ jobs:
 
       - name: Build package
         run: yarn build
+  jsdoc:
+    runs-on: ubuntu-latest
+    name: Generate JS Doc
+    strategy:
+      matrix:
+        node-version: ["18.*"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./src
+          output_dir: ./out
+          template: minami
+          front_page: documentation.md
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
