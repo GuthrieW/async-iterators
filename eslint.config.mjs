@@ -7,5 +7,5 @@ import { globalIgnores } from "eslint/config";
 export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
-  globalIgnores(["dist/*"])
+  globalIgnores(["dist/*", "out/*"])
 );
