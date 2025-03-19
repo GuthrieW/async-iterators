@@ -174,7 +174,7 @@ Project Link: [https://github.com/GuthrieW/async-iterators](https://github.com/G
 
 ## Acknowledgments
 
-- [Gregory Spicer](https://github.com/littlespice33) and [Joshua Sarna](https://github.com/joshsarna) for both introducing me to this issue working on solutions together
+- [Gregory Spicer](https://github.com/littlespice33) and [Joshua Sarna](https://github.com/joshsarna) for both introducing me to this issue and working on solutions together
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
