@@ -1,10 +1,18 @@
 /**
+ * @name FindLastIterateeFunction
+ * @function
+ * @param {T} value
+ * @param {number} index
+ * @returns {Promise<boolean>}
+ * @private
+ */
+/**
  * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast|MDN Documentation Array.prototype.findLast}
  *
  * @static
  * @since 1.0.0
  * @param {T[]} array
- * @param {(value: T, index: number) => Promise<boolean>} iteratee
+ * @param {FindLastIterateeFunction} iteratee (value: T, index: number) => Promise<boolean>
  * @returns {Promise<T | undefined>}
  * @example
  * const array = [1, 2, 3];

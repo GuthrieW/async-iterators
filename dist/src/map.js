@@ -2,14 +2,22 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = map;
 /**
+ * @name MapIterateeFunction
+ * @function
+ * @param {T} value
+ * @param {number} index
+ * @returns {Promise<V>}
+ * @private
+ */
+/**
  * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map|MDN Documentation Array.prototype.map}
  * Optionally, you can batch your iterations to more efficiently await blocking iteratee function calls using the batchIterations and batchSize attributes on the options parameter.
  *
  * @static
  * @since 1.0.0
  * @param {T[]} array
- * @param {(value: T, index: number) => Promise<V>} iteratee
- * @param {{ batchIterations: boolean; batchSize: number }} [options]
+ * @param {MapIterateeFunction} iteratee (value: T, index: number) => Promise<V>
+ * @param {BatchOptionalParams} [options]
  * @returns {Promise<V[]>}
  * @example
  * const array = [1, 2, 3];
@@ -46,8 +54,10 @@ async function mapParallel(array, iteratee, batchSize) {
 }
 /**
  * take and complete tasks from a queue until that queue is empty.
- * @param {{ task: T; index: number }[]} array
- * @param {(value: T, index: number) => Promise<V>} iteratee
+ * @param {BatchTask[]} array
+ * @param {BatchIterateeFunction}
+ * @param {BatchIterateeFunction} iteratee
+ * @private
  */
 async function takeAndCompleteFromQueueUntilDone(array, iteratee) {
     const item = array.shift();

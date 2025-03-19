@@ -1,10 +1,18 @@
 /**
+ * @name EveryIterateeFunction
+ * @function
+ * @param {T} value
+ * @param {number} index
+ * @returns {Promise<boolean>}
+ * @private
+ */
+/**
  * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every|MDN Documentation Array.prototype.every}
  *
  * @static
  * @since 1.0.0
  * @param {T[]} array
- * @param {(value: T, index: number) => Promise<boolean>} iteratee
+ * @param {EveryIterateeFunction} iteratee (value: T, index: number) => Promise<boolean>
  * @returns {Promise<boolean>}
  * @example
  * const array = [3, 3, 3];
